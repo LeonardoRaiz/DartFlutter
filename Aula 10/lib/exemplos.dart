@@ -1,4 +1,7 @@
-// Arquivo: classes_e_objetos.dart
+// Classes e objetos.
+// Atributos e métodos.
+// Construtores.
+// Instanciação de objetos.
 
 // Definição da Classe Pessoa
 class Pessoa {
