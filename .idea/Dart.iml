@@ -6,10 +6,15 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/Aula 13/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Aula 13/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Aula 13/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Aula 13/lib/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Aula 13/lib/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Aula 13/lib/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />
-    <orderEntry type="library" name="Dart Packages" level="project" />
   </component>
 </module>
