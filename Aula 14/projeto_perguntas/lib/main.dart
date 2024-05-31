@@ -1,27 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_perguntas/questao.dart';
+import 'package:projeto_perguntas/respostas.dart';
 
 void main() => runApp(new PerguntaApp());
 
+class _PerguntaAppState extends State<PerguntaApp> {
+  var perguntaSelecionada = 0;
 
-class PerguntaApp extends StatelessWidget {
-
-  void responder() {
-    print('Pergunta respondida');
-  }
-
-  void Function() funcaoQueRetornaOutraFuncao() {
-    return () {
-      print('Pergunta respondida 02');
-    };
+  void _responder() {
+    setState(() {
+      perguntaSelecionada++;
+    });
+    print(perguntaSelecionada);
   }
 
   @override
   Widget build(BuildContext context) {
-    final List<String> perguntas = [
-      'Qual é a sua cor favorita?',
-      'Qual é o seu animal favorito?',
+    final List<Map<String, Object>> perguntas = [
+      {
+        'texto': 'Qual é a sua cor favorita?',
+        'respostas': ['Preto', 'Roxo', 'Vermelho', 'Branco']
+      },
+      {
+        'texto': 'Qual é o seu animal favorito?',
+        'respostas': ['Coelho', 'Cobre', 'Elefante', 'Leão']
+      },
+      {
+        'texto': 'Qual é o seu professor favorito?',
+        'respostas': ['Léo', 'Maria', 'João', 'Pedro']
+      },
     ];
 
+    List<String> respostas = perguntas[perguntaSelecionada].cast()['respostas'];
+
+    // for (var textoResp in respostas) {
+    //   widgets.add(Respostas(textoResp, _responder));
+    // }
 
     return MaterialApp(
       home: Scaffold(
@@ -30,15 +44,18 @@ class PerguntaApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text(perguntas[0]),
-            ElevatedButton(onPressed: responder, child: Text('Resposta 1')),
-            ElevatedButton(onPressed: () => {
-              print('Resposta 02')
-            }, child: Text('Resposta 2')),
-            ElevatedButton(onPressed: funcaoQueRetornaOutraFuncao(), child: Text('Resposta 3')),
+            Questao(perguntas[perguntaSelecionada]['texto'].toString()),
+            // todos os elementos add na lista
+            ...respostas.map((texto) => Respostas(texto, _responder))
           ],
         ),
       ),
     );
+  }
+}
+
+class PerguntaApp extends StatefulWidget {
+  _PerguntaAppState createState() {
+    return _PerguntaAppState();
   }
 }
