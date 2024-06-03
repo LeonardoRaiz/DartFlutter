@@ -15,7 +15,6 @@ class Respostas extends StatelessWidget {
       height: 50,
       margin: const EdgeInsets.all(10),
       child: ElevatedButton(
-        child: Text(texto),
         style: ElevatedButton.styleFrom(
             foregroundColor: const Color.fromRGBO(255, 255, 255, 1),
             backgroundColor: Colors.green,
@@ -26,6 +25,7 @@ class Respostas extends StatelessWidget {
             textStyle:
                 const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         onPressed: onSelected,
+        child: Text(texto),
       ),
     );
   }
